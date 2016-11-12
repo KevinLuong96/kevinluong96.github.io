@@ -1,0 +1,10 @@
+*{
+  box-sizing: border-box;
+}
+.name {
+  width: auto;
+  max-width: 0%;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: max-width 1s linear;
+}
