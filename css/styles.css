@@ -1,25 +1,100 @@
 *{
   box-sizing: border-box;
+  font-family: 'Open-sans';
+  text-align: center;
+  color: dimgrey;
 }
 
+/* FONTS */
 @font-face {
   font-family: 'Alcubierre';
   src: url('../fonts/Alcubierre.otf');
 }
 
+@font-face {
+  font-family: 'Open-Sans';
+  src: url('../fonts/OpenSans.ttf');
+}
+
+
 .container{
+  width: 100%;
   display: flex;
 }
 
-.name{
+.name,
+.projects{
   justify-content: center;
 }
 
-#name-title-bar{
-  overflow: hidden;
+h1,
+h2{
   font-family: 'Alcubierre';
+}
+
+.scrolling{
+  overflow: hidden;
   max-width: 0%;
-  transition: max-width 2s linear;
+  transition: max-width 1.5s linear;
   white-space: nowrap;
   margin: 10px 0;
 }
+
+#intro{
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* NAME BAR */
+.name h1{
+  z-index: 1;
+  color:  #0e7cea;
+}
+
+/* NAV */
+nav{
+  display: flex;
+  justify-content: space-around;
+  padding: 5px 0;
+  height: 30px;
+}
+
+nav a{
+  display: none;
+  text-decoration: none;
+}
+
+#menu-button {
+  position: absolute;
+  right: 10px;
+  display: block;
+  width: 20px;
+  top: 0;
+  height: 0;
+  box-shadow: 0 10px 0 1px dimgrey,0 16px 0 1px dimgrey,0 22px 0 1px dimgrey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,5 +1,6 @@
 'use strict';
 
 $(document).ready(function(){
-  $('#name-title-bar').css('max-width', '100%');
+  $('.scrolling').css('max-width', '100%');
+  $('#intro').hide();
 });
