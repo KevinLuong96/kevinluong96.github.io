@@ -1,141 +1,496 @@
 *{
-  box-sizing: border-box;
-  font-family: 'Open-sans';
-  text-align: center;
-  color: dimgrey;
+  box-sizing:border-box;
 }
 
-/* FONTS */
-@font-face {
-  font-family: 'Alcubierre';
-  src: url('../fonts/Alcubierre.otf');
+@font-face{
+  font-family: "OpenSans";
+  src: url("../fonts/OpenSans-Light.ttf");
 }
 
-@font-face {
-  font-family: 'Open-Sans';
-  src: url('../fonts/OpenSans.ttf');
+@font-face{
+  font-family: "BebasNeueLight";
+  src: url("../fonts/BebasNeueLight.otf");
+}
+body{
+  font-family: OpenSans;
+  height: 100vh;
 }
 
-
-/* GENERAL */
-
-.container{
-  width: 100%;
-  display: flex;
+h1{
+  font-weight: normal;
+  margin: 0;
 }
 
-.name,
-.projects{
-  justify-content: center;
-}
-
-h1,
 h2{
-  font-family: 'Alcubierre';
-  margin: 10px 0;
+  font-weight: normal;
+  margin: 0.25em 0;
 }
 
-.scrolling{
-  overflow: hidden;
-  max-width: 0%;
-  /* transition: max-width 1.5s linear; */
-  white-space: nowrap;
-  margin: 10px 0;
-}
-
-.picture{
-  width: 80%;
-  border-radius: 50%;
-  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.85);
-  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.85);
-  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.85);
-}
-
-/* INTRO */
-#intro{
-  background-color: white;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-}
-
-#intro h1{
-  font-size: 300%;
-  color:  #0e7cea;
-}
-
-/* NAME BAR */
-.name h1{
-  /* z-index: 1; */
-  color:  #0e7cea;
-}
-
-/* NAV */
-nav{
-  position: absolute;
-  width: 100%;
-}
-
-#link-list{
-  display: none;
-
-  margin-top: 18px;
-  justify-content: space-around;
-}
-
-nav a{
+a{
   text-decoration: none;
 }
 
-.static{
-  position: static;
+p{
+  margin:0;
 }
 
-.flexed{
-  display: flex !important;
+/* Float Shadow */
+.hvr-float-shadow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
 }
-
-#clickable{
-  width: 30px;
-  height: 30px;
+.hvr-float-shadow:before {
+  pointer-events: none;
   position: absolute;
-  right: 22px;
-  top: 13px;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, 
+    rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, 
+    rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
 }
-#menu-button {
-  position: absolute;
-  right: 0px;
-  display: block;
-  width: 20px;
-  top: 0px;
-  height: 0;
-  box-shadow: 0 10px 0 1px dimgrey,0 16px 0 1px dimgrey,0 22px 0 1px dimgrey;
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  /* move the element up by 5px */
+}
+.hvr-float-shadow:hover:before, 
+.hvr-float-shadow:focus:before, 
+.hvr-float-shadow:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
-/* ABOUT */
+/*-----------------------
+---------Header----------
+-------------------------*/
+
+.main-header{
+  display:flex;
+  flex-direction: column;
+  background-color:rgba(255, 255,255, 0.8);
+  box-shadow: 0 0 10px;
+  z-index: 2;
+  position:relative;
+}
 
 
+.main-nav{
+  display:none;
+  flex:1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-nav li{
+  width:100%;
+  text-align: center;
+  border-bottom: 1px solid grey;
+}
+
+.main-nav a{
+  display:block;
+  padding: 0.25em;
+  font-size:1.3em;
+  color:black;
+}
+
+.dropdown {
+  width:20px;
+  align-self: flex-end;
+  margin: 2px;
+  margin-left:auto;
+  margin-right: 2px;
+}
 
 
+/*-----------------------
+---------Banner----------
+-------------------------*/
+.background img{
+  width:100%;
+  padding-left: 0;
+  -webkit-filter: saturate(70%);
+  max-height: calc(100vh - 40px);
+}
+
+.banner{
+  position:relative;
+}
+
+.banner-text{
+  font-family: "BebasNeueLight";
+  position:absolute;
+  width:100%;
+  top: 5%;
+  text-align: center;
+}
+
+.banner-text h1{
+  font-size: 2em;
+}
+
+.banner-text p{
+  font-size: 1em;
+  margin-top: -0.15em;
+}
+.background{
+  margin:0;
+}
+
+.banner a{
+  position:absolute;
+  bottom: 1em;
+  left:0;
+  color:white;
+  font-size: 0.5em;
+}
+/*-----------------------
+---------Content----------
+-------------------------*/
+.container{
+  width:90%;
+  margin:0 5% 10px 5%;
+}
+
+.active{
+  text-decoration: underline;
+}
+
+/*-----------------------
+-----------Home----------
+-------------------------*/
+.gallery{
+  display:flex;
+  flex-wrap: wrap;
+}
+.gallery li{
+  width:100%;
+}
+.icon{
+  width:100%;
+}
+
+.interests{
+  padding-top: 25px;
+}
+
+/*-----------------------
+---------Projects----------
+-------------------------*/
+.logo{
+  width:80%;
+  display:inline-block;
+  margin: auto;
+}
+
+.projects{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+}
+
+.projects h3{
+  display:block;
+  width:100%;
+}
+
+.projects h2{
+  text-align: center;
+  font-size: 2em;
+}
+
+.text{
+  padding-top: 15px;
+}
+
+#github{
+  text-align: center;
+  width: 100%;
+  font-size: 2em;
+}
+
+.project-link{
+  font-size: 1.5em;
+  margin: 25px 0;
+}
+.projects img,
+.thermovest h2{
+  display:block;
+  padding: 10px;
+  border: 1px solid #7395AD;
+  border-radius: 15px;
+}
+
+.project{
+  margin: 15px 0 15px 0;
+}
+
+.split{
+  border-top:none;
+}
+
+.shown{
+  box-shadow: inset 0px 0px 10px #000000;
+}
+
+.centered{
+  text-align: center;
+}
+
+.centered p{
+  margin-top: 10px;
+}
+
+/*
+  The h2 element of thermovest is the one to be clicked because there is no 
+  img available. Set the styling of the thermovest h2 element to be like project
+  logos so that users know it is clickable
+*/
+.thermovest h2{
+  display:inline-block;
+  margin-top: 25px;
+}
+
+.thermovest{
+  text-align:center;
+}
+
+.thermovest .text{
+  text-align: left;
+}
+
+.lights img{
+  border:none;
+  padding: 0;
+}
+
+/*-----------------------
+---------Contact----------
+-------------------------*/
+.contact p,
+.phone{
+  padding-top: 10px;
+}
+
+.contact{
+  text-align: center;
+}
+
+#iframe {
+  height: 675px;
+}
+
+/*-------------------------
+---------Media Queries-----
+-------------------------*/
+
+@media(min-width: 22em){
+  .banner-text h1{
+    font-size: 2em;
+  }
+
+  .banner-text p{
+    font-size: 1em;
+  }
+  .main-nav{
+    display: flex;
+  }
+
+  .dropdown{
+    display:none;
+  }
+
+  .contact a{
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #83BBCB;
+  }
+
+  .contact p,
+  .contact a,
+  .contact span{
+    font-size: 1.25em;
+    margin: 10px 0;
+  }
+  .projects{
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .project{
+    width:50%;
+    padding: 0 10px;
+  }
+
+  .thermovest{
+    width:100%;
+  }
+
+}
+@media(min-width: 35em), (orientation:landscape){
+
+  .main-nav li{
+    width:auto;
+    border: 1px solid grey;
+    flex:1;
+  }
+
+  .main-nav a{
+    padding: 5px;
+  }
+
+  .main-nav{
+    /*display:flex;*/
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .banner{
+    top:40px;
+    margin-bottom:40px;
+    width: 100%;
+  }
 
 
+  .banner h1{
+    font-size:300%;
+  }
 
+  .banner p{
+    font-size:larger;
+  }
 
+  .banner-text{
+    top: 1em;
+  }
 
+  .container{
+    width:80%;
+    margin: 0 10% 10px 10%;
+  }
 
+  .gallery li{
+    width:50%;
+    padding:0 10px;
+  }
 
+  .project{
+    width: 33%;
+    flex: 1 1 33%;
+  }
 
+  .thermovest h2{
+    padding: 8px;
+    margin: 0;
+  }
 
+  .main-header{
+    position:fixed;
+    width:100%;
+    top:0;
+  }
+}
 
+@media(min-width: 60em){
 
+  .main-nav{
+    justify-content: flex-end;
+  }
 
+  .main-nav li{
+    margin: 0;
+    flex: initial;
+    margin: 0 10px;
+    border:none;
+  }
 
+  .main-nav a{
+    padding: 5px 15px;
+  }
 
+  body{
+    margin-top: 40px;
+    min-height: 100vh;
+  }
 
+  .container{
+    width:80%;
+    margin:0 10% 100px 10%;
+  }
 
+  .gallery li{
+    width:25%;
+  }
 
+  .banner h1{
+    font-size: 500%;
+  }
 
+  .banner p{
+    font-size: 300%;
+  }
+
+  .projects{
+    padding-top: 50px;
+    width: 100%;
+  }
+
+  .banner{
+    position:fixed;
+    z-index: -2;
+    top:40px;
+  }
+
+  section{
+    height:auto;
+    width:100%;
+    position:absolute;
+    top: 100vh;
+    background-color:white;
+  }
+
+  section h3{
+    text-align: center;
+  }
+
+  .background img{
+    height:100vh;
+  }
+
+  .text{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  iframe {
+    height: 525px;
+  }
+}
 
