@@ -87,6 +87,14 @@ p{
 }
 
 /*-----------------------
+------Flexbox Classes----
+-------------------------*/
+.flex-centered{
+  display: flex;
+  justify-content: center;
+}
+
+/*-----------------------
 ---------Header----------
 -------------------------*/
 
@@ -171,7 +179,7 @@ p{
   font-size: 0.5em;
 }
 /*-----------------------
----------Content----------
+-----Generic Content------
 -------------------------*/
 .container{
   width:90%;
@@ -180,6 +188,14 @@ p{
 
 .active{
   text-decoration: underline;
+}
+
+.quarter{
+  width: 25%;
+}
+
+.full{
+  width: 100%;
 }
 
 /*-----------------------
@@ -232,16 +248,18 @@ p{
 }
 
 #github{
-  text-align: center;
+  width: 25%;
+}
+
+#github{
   width: 100%;
-  font-size: 2em;
 }
 
 .project-link{
   font-size: 1.5em;
   margin: 25px 0;
 }
-.projects img,
+.project img,
 .thermovest h2{
   display:block;
   padding: 10px;

@@ -59,9 +59,9 @@ function removeShown(){
   }
 }
 
-$(".projects img").hover(addShown,removeShown);
+$(".project img").hover(addShown,removeShown);
 //Also apply to thermovest text
-$(".thermovest h2").hover(addShown,removeShown)
+$(".thermovest h2").hover(addShown,removeShown);
 
 
 //Hide interests text by default, when icon is clicked show text
