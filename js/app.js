@@ -76,7 +76,7 @@ $(".icon").click(function(){
   $(this).next().slideToggle('fast', function(){
     if($(this).height() > 0) {
       $('html, body').animate({
-        scrollTop: $(this).offset().top
+        scrollTop: $(this).offset().top - 30
       }, 1000);
     }
   });
