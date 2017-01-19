@@ -72,7 +72,7 @@ $(document).ready(function(){
 });
 
 //when icons are clicked, show text
-$(".icon").click(function(){
+$(".about .full").click(function(){
   $(this).next().slideToggle('fast', function(){
     if($(this).height() > 0) {
       $('html, body').animate({

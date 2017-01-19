@@ -208,9 +208,6 @@ p{
 .gallery li{
   width:100%;
 }
-.icon{
-  width:100%;
-}
 
 .interests{
   padding-top: 25px;
@@ -245,14 +242,6 @@ p{
 
 .text{
   padding-top: 15px;
-}
-
-#github{
-  width: 25%;
-}
-
-#github{
-  width: 100%;
 }
 
 .project-link{
