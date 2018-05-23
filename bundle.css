@@ -391,7 +391,7 @@ ul {
 .spinner {
   z-index: 5;
   width: 100%;
-  position: absolute;
+  position: fixed;
   color: #F6F9Fd;
   font-size: 5em;
   background: #0e4177;
@@ -490,11 +490,15 @@ ul {
   src: url(1bf71be111189e76987a4bb9b3115cb7.ttf); }
 
 @font-face {
+  font-family: "Avenir";
+  src: url(57dd7e9290cb105b7882f182c0d848e0.otf); }
+
+@font-face {
   font-family: "BebasNeueLight";
   src: url(4c8d42e69711e4e230d9081694db00ce.otf); }
 
 body {
-  font-family: OpenSans;
+  font-family: Avenir;
   height: 100vh; }
 
 h1 {
