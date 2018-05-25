@@ -447,7 +447,8 @@ ul {
   padding: 20px; }
 
 .work {
-  background: #F6F9Fd; }
+  background: #F6F9Fd;
+  min-height: 100vh; }
 
 .work * {
   color: #0e4177; }
@@ -480,6 +481,55 @@ ul {
 .bullet {
   list-style-type: square;
   margin-left: 20px; }
+
+.contact {
+  min-height: 100vh;
+  background: #F6F9Fd;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+
+.contact-header {
+  margin-top: 100px; }
+
+.contact-container {
+  display: flex;
+  margin: 50px auto;
+  width: 30%;
+  justify-content: space-around; }
+
+.contact-icon {
+  font-size: 3em; }
+
+.contact-text {
+  width: 80%;
+  margin: 25px auto;
+  text-align: center; }
+
+.resume {
+  text-decoration: underline; }
+
+.interests {
+  min-height: 100vh;
+  background: #111d33;
+  padding-bottom: 50px; }
+
+.interests * {
+  color: #F6F9Fd; }
+
+.interests-header {
+  text-align: center;
+  padding: 100px; }
+
+.interest {
+  width: 80%;
+  margin: 25px auto;
+  display: flex;
+  align-items: center; }
+
+.interest-icon {
+  font-size: 5em;
+  width: 100px; }
 
 * {
   box-sizing: border-box;
